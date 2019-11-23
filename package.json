@@ -1,0 +1,27 @@
+{
+  "name": "veg-life",
+  "version": "1.0.0",
+  "description": "Projeto final reprograma",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iprih/veg-life.git"
+  },
+  "author": "Priscila Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iprih/veg-life/issues"
+  },
+  "homepage": "https://github.com/iprih/veg-life#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.12",
+    "nodemon": "^2.0.1"
+  }
+}
