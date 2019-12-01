@@ -21,7 +21,7 @@
     "body-parser": "^1.19.0",
     "debug": "^4.1.1",
     "express": "^4.17.1",
-    "mongoose": "^5.7.12",
+    "mongoose": "^5.7.13",
     "nodemon": "^2.0.1"
   }
 }
