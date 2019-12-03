@@ -1,4 +1,4 @@
-const Restaurantes = require("../model/estabelecimentos")
+const Estabelecimentos = require("../model/estabelecimentos")
 
 exports.post = (req, res) => {
     const estabelecimento = new Estabelecimentos(req.body)

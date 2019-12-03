@@ -4,13 +4,6 @@ const EstabelecimentosSchema = new mongoose.Schema({
 
     nome: { type: String },
     categoria: { type: String },
-    // cardapio: [{
-    //     comida: { type: String },
-    //     bebida: { type: String },
-    //     sobremesas: { type: String },
-    //     doces: { type: String },
-    //     lanches: { type: String }
-    // }],
     tipoNegocio: { type: String},
     email: { type: String },
     endereco: { type: String },
