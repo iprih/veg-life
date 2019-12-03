@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');//estabelece a conexão
 
-const RestaurantesSchema = new mongoose.Schema({
+const EstabelecimentosSchema = new mongoose.Schema({
 
     nome: { type: String },
     categoria: { type: String },
@@ -11,6 +11,7 @@ const RestaurantesSchema = new mongoose.Schema({
     //     doces: { type: String },
     //     lanches: { type: String }
     // }],
+    tipoNegocio: { type: String},
     email: { type: String },
     endereco: { type: String },
     numero: { type: Number },
@@ -26,6 +27,6 @@ const RestaurantesSchema = new mongoose.Schema({
 },
     { versionKey: false })
 
-const Restaurantes = mongoose.model('Restaurantes', RestaurantesSchema)
+const Estabelecimentos = mongoose.model('Estabelecimentos', EstabelecimentosSchema)
 
-module.exports = Restaurantes
+module.exports = Estabelecimentos
