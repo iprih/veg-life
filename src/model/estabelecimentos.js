@@ -2,7 +2,7 @@ const mongoose = require('mongoose');//estabelece a conexão
 
 const EstabelecimentosSchema = new mongoose.Schema({
 
-    nome: { type: String },
+    nomeEstabelecimento: { type: String },
     categoria: { type: String },
     tipoNegocio: { type: String},
     email: { type: String },
