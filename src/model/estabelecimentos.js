@@ -12,13 +12,13 @@ const EstabelecimentosSchema = new mongoose.Schema({
     cidade: { type: String },
     uf: { type: String },
     cep: { type: Number },
-    atendimento:[{
-    	diasemana: { type: String },
-    	horario: { type: String }
-    }],
-    delivery: { type: Boolean }, 
-    telefone: { type: Number }
-},
+    diaSemana: { type: String },
+    horario: { type: String },
+    
+    delivery: { type: Boolean }},
+//     contato: [ddd:{ type: Number},
+//          telefone: { type: Number }]
+// },
     { versionKey: false })
 
 const Estabelecimentos = mongoose.model('Estabelecimentos', EstabelecimentosSchema)
