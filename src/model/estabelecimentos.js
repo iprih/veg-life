@@ -16,8 +16,8 @@ const EstabelecimentosSchema = new mongoose.Schema({
     horario: { type: String },
     
     delivery: { type: Boolean }},
-//     contato: [ddd:{ type: Number},
-//          telefone: { type: Number }]
+//     contato: [{ddd: { type: Number},
+//          telefone: { type: Number }}]
 // },
     { versionKey: false })
 
