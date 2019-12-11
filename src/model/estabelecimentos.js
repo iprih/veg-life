@@ -3,6 +3,7 @@ const mongoose = require('mongoose');//estabelece a conexão
 const EstabelecimentosSchema = new mongoose.Schema({
 
     nomeEstabelecimento: { type: String },
+    cnpj: { type: Number },
     categoria: { type: String },
     tipoNegocio: { type: String},
     email: { type: String },

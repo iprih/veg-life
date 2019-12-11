@@ -35,3 +35,39 @@ exports.getByCategoria = (req, res) => {
     })
 }
 
+//buscar por tipo de negocio, trazer nome, telefone e cardapoio
+//buscar por cep
+//na busca por categoria, trazer o cardapio
+
+exports.updateEstabelecimento = (req, res) => {
+    Estabelecimentos.findOneAndUpdate( 
+        { cnpj: req.params.cnpj },
+        { $set: req.body },
+        { upsert: false },
+        (err, estabelecimento) => {
+            if (err) return res.status(500).send(err);
+
+            if (!estabelecimento) return res.status(401).send({ mensagem: "Não localizamos o Estabelecimento para atualizar" });
+            
+            return res.status(200).send({ mensagem: "Estabelecimento atualizado com sucesso!" });
+        });    
+};
+
+
+exports.deleteEstabelecimento = (req, res, next) => {
+    Estabelecimentos.findOne({ "cnpj": req.params.cnpj }, function (err, estabelecimento) {
+        if (err) res.status(500).send(err);
+
+        if (!estabelecimento) return res.status(200).send({ mensagem: "Não localizamos o Estabelecimento para remover" });
+
+        estabelecimento.remove(function (err) {
+            if (!err) {
+                res.status(200).send({ message: 'Estabelecimento removido com sucesso.' });
+            }
+        })
+    })
+};
+
+
+
+
