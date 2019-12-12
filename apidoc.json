@@ -1,0 +1,8 @@
+{
+    "name": "Documentação API - Reprograma",
+    "version": "1.0.0",
+    "description": "API Veg Life",
+    "template":{
+        "forceLanguage": "en"
+    }
+}

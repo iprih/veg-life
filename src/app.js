@@ -3,6 +3,8 @@ const mongoose = require("mongoose")
 const bodyParser = require('body-parser')
 const app = express()
 
+app.use(express.static('public'));
+
 mongoose.connect("mongodb+srv://admin:admin@cluster0-tjvtu.mongodb.net/veglife", {useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false});
 //mongoose.connect("mongodb://localhost:27017/restaurantes", {useUnifiedTopology: true, useNewUrlParser: true});
 
