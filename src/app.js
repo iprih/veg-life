@@ -2,8 +2,13 @@ const express = require("express")
 const mongoose = require("mongoose")
 const bodyParser = require('body-parser')
 const app = express()
+//const path = require()
 
-app.use(express.static('public'));
+app.use(express.static('doc'));
+
+app.use('/api-doc', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../doc/index.html'))
+})
 
 mongoose.connect("mongodb+srv://admin:admin@cluster0-tjvtu.mongodb.net/veglife", {useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false});
 //mongoose.connect("mongodb://localhost:27017/restaurantes", {useUnifiedTopology: true, useNewUrlParser: true});

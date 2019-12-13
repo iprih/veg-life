@@ -1,4 +1,4 @@
-{
+define({
   "name": "Documentação API - Reprograma",
   "version": "1.0.0",
   "description": "API Veg Life",
@@ -10,8 +10,8 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2019-12-12T01:41:43.406Z",
+    "time": "2019-12-13T00:31:14.091Z",
     "url": "http://apidocjs.com",
     "version": "0.19.0"
   }
-}
+});
