@@ -59,13 +59,52 @@ const controller = require("../controller/estabelecimentosController")
  *       status: true,
  *       mensagem: "Estabelecimento cadastrado com sucesso!"
  *   }
- * 
+ * @apiError Internal Server Error.
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 500 Internal Server Error
+ *     {
+ *       "error": "Internal Server Error"
+ *     }
  * 
  */
 //geo
 //
 router.post("/", controller.post)
 
+/**
+ * @api {get} /estabelecimentos
+ * @apiName GetEstabelecimentos
+ * @apiGroup GetEstabelecimentos
+ *
+ *
+ * @apiSuccess {Object[]} Retorna estabelecimentos cadastrados.
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *   [{    
+ *   "nomeEstabelecimento": "Teste",
+ *   "cnpj": 123456,
+ *   "categoria": "Teste",
+ *   "tipoNegocio": "Teste",
+ *   "email": "Teste",
+ *   "endereco": "Teste",
+ *   "numero": "Teste",
+ *   "cidade": "Teste",
+ *   "uf": "Teste",
+ *   "cep": 0800,
+ *   "diaSemana": "Teste",
+ *   "horario": "Teste"
+ *   }]
+ *
+ * @apiError Internal Server Error.
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 500 Internal Server Error
+ *     {
+ *       "error": "Internal Server Error"
+ *     }
+ */
 
 
 
