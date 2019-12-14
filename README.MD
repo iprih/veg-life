@@ -7,4 +7,11 @@
 ### Rotas/EndPoints
 
 
-### Tecnologias Utilizadas
+### Tecnologias Utilizadas / Apoio
+
+ - API REST
+ - NodeJS
+ - MongoDB
+ - Postman
+ - Heroku
+ - ApiDoc
