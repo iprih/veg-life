@@ -3,12 +3,12 @@ const router = express.Router()
 const controller = require("../controller/estabelecimentosController")
 
 /**
- * @api {get} /estabelecimentos
- * @apiName Estabelecimentos Cadastrados
- * @apiGroup GetEstabelecimentos
+ * @api {get} /estabelecimentos Retorno de estabelecimentos
+ * @apiName GetCadastrados
+ * @apiGroup Estabelecimentos
  *
  *
- * @apiSuccess {Object[]} Retorna estabelecimentos cadastrados.
+ * @apiSuccess {Object[]} Retorna estabelecimentos cadastrados
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
@@ -34,13 +34,15 @@ const controller = require("../controller/estabelecimentosController")
  *     {
  *       "error": "Internal Server Error"
  *     }
+ * 
  */
  router.get("/", controller.get)
 
+
 /**
- * @api {post} /estabelecimentos
- * @apiName Cadastro de Estabelecimentos
- * @apiGroup PostEstabelecimentos
+ * @api {post} /estabelecimentos Criação de estabelecimento
+ * @apiName PutEstabelecimentos
+ * @apiGroup Estabelecimentos
  * 
  * @apiParam (Request Body) {String} nomeEstabelecimento         Nome do estabelecimento
  * @apiParam (Request Body) {Number} cnpj                        Cnpj
@@ -74,12 +76,13 @@ const controller = require("../controller/estabelecimentosController")
 router.post("/", controller.post)
 
 /**
- * @api {get} /estabelecimentos/:categoria
- * @apiName Estabelecimentos por Categoria
- * @apiGroup GetEstabelecimentos
- * @apiParam {String} Categoria
+ * @api {get} /estabelecimentos/:categoria Retorno de estabelecimentos por categoria
+ * @apiName GetByCategoria
+ * @apiGroup Estabelecimentos
+ * 
+ * @apiParam {String} Categoria Vegano, Ovolactovegetariano ou Lactovegetariano
  *
- * @apiSuccess {Object[]} Retorna Estabelecimentos por Categoria: Vegano, Ovolactovegetariano ou Lactovegetariano.
+ * @apiSuccess {Object[]} Retorna Informacoes dos Estabelecimentos
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
@@ -107,9 +110,9 @@ router.get("/:categoria", controller.getByCategoria)
 
 
 /**
- * @api {put} /estabelecimentos/:cnpj
- * @apiName Atualização de dados do Estabelecimento
- * @apiGroup PutEstabelecimentos
+ * @api {put} /estabelecimentos/:cnpj Atualizacao de estabelecimento
+ * @apiName PutEstabelecimento 
+ * @apiGroup Estabelecimentos
  *
  * @apiParam {Number} CNPJ                                       CNPJ do estabelecimento
  *
@@ -146,13 +149,13 @@ router.get("/:categoria", controller.getByCategoria)
 router.put("/:cnpj", controller.updateEstabelecimento)
 
 /**
- * @api {delete} /estabelecimentos/:cnpj
- * @apiName Exclusão do Estabelecimento
- * @apiGroup DeleteEstabelecimentos
- *
+ * @api {delete} /estabelecimentos/:cnpj Exclusao de estabelecimento
+ * @apiName DeleteEstabelecimento 
+ * @apiGroup Estabelecimentos
+ * 
  * @apiParam {Number} CNPJ                                       CNPJ do estabelecimento
  *
- * @apiSuccess {Object[]} Mensagem de sucesso ao excluir um estabelecimento
+ * @apiSuccess {Object[]} Retorna Mensagem de sucesso ao excluir um estabelecimento
  * 
  * @apiSuccessExample {json} Sucesso
  *    HTTP/1.1 200 OK
@@ -169,5 +172,7 @@ router.put("/:cnpj", controller.updateEstabelecimento)
  */
 
 router.delete("/:cnpj", controller.deleteEstabelecimento)
+
+
 
 module.exports = router

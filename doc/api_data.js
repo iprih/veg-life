@@ -2,9 +2,9 @@ define({ "api": [
   {
     "type": "delete",
     "url": "/estabelecimentos/:cnpj",
-    "title": "",
-    "name": "Exclus_o_do_Estabelecimento",
-    "group": "DeleteEstabelecimentos",
+    "title": "Exclusao de estabelecimento",
+    "name": "DeleteEstabelecimento",
+    "group": "Estabelecimentos",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -25,8 +25,8 @@ define({ "api": [
             "group": "Success 200",
             "type": "Object[]",
             "optional": false,
-            "field": "Mensagem",
-            "description": "<p>de sucesso ao excluir um estabelecimento</p>"
+            "field": "Retorna",
+            "description": "<p>Mensagem de sucesso ao excluir um estabelecimento</p>"
           }
         ]
       },
@@ -59,63 +59,14 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "src/routes/estabelecimentosRoutes.js",
-    "groupTitle": "DeleteEstabelecimentos"
-  },
-  {
-    "type": "get",
-    "url": "/estabelecimentos",
-    "title": "",
-    "name": "Estabelecimentos_Cadastrados",
-    "group": "GetEstabelecimentos",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "Retorna",
-            "description": "<p>estabelecimentos cadastrados.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Teste\",\n\"cnpj\": 123456,\n\"categoria\": \"Teste\",\n\"tipoNegocio\": \"Teste\",\n\"email\": \"Teste\",\n\"endereco\": \"Teste\",\n\"numero\": \"Teste\",\n\"cidade\": \"Teste\",\n\"uf\": \"Teste\",\n\"cep\": 0800,\n\"diaSemana\": \"Teste\",\n\"horario\": \"Teste\"\n}]",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "fields": {
-        "500": [
-          {
-            "group": "500",
-            "optional": false,
-            "field": "serverError",
-            "description": ""
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "HTTP/1.1 500 Internal Server Error\n{\n  \"error\": \"Internal Server Error\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/routes/estabelecimentosRoutes.js",
-    "groupTitle": "GetEstabelecimentos"
+    "groupTitle": "Estabelecimentos"
   },
   {
     "type": "get",
     "url": "/estabelecimentos/:categoria",
-    "title": "",
-    "name": "Estabelecimentos_por_Categoria",
-    "group": "GetEstabelecimentos",
+    "title": "Retorno de estabelecimentos por categoria",
+    "name": "GetByCategoria",
+    "group": "Estabelecimentos",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -124,7 +75,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "Categoria",
-            "description": ""
+            "description": "<p>Vegano, Ovolactovegetariano ou Lactovegetariano</p>"
           }
         ]
       }
@@ -137,7 +88,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": false,
             "field": "Retorna",
-            "description": "<p>Estabelecimentos por Categoria: Vegano, Ovolactovegetariano ou Lactovegetariano.</p>"
+            "description": "<p>Informacoes dos Estabelecimentos</p>"
           }
         ]
       },
@@ -170,109 +121,30 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "src/routes/estabelecimentosRoutes.js",
-    "groupTitle": "GetEstabelecimentos"
+    "groupTitle": "Estabelecimentos"
   },
   {
-    "type": "post",
+    "type": "get",
     "url": "/estabelecimentos",
-    "title": "",
-    "name": "Cadastro_de_Estabelecimentos",
-    "group": "PostEstabelecimentos",
-    "parameter": {
+    "title": "Retorno de estabelecimentos",
+    "name": "GetCadastrados",
+    "group": "Estabelecimentos",
+    "success": {
       "fields": {
-        "Request Body": [
+        "Success 200": [
           {
-            "group": "Request Body",
-            "type": "String",
+            "group": "Success 200",
+            "type": "Object[]",
             "optional": false,
-            "field": "nomeEstabelecimento",
-            "description": "<p>Nome do estabelecimento</p>"
-          },
-          {
-            "group": "Request Body",
-            "type": "Number",
-            "optional": false,
-            "field": "cnpj",
-            "description": "<p>Cnpj</p>"
-          },
-          {
-            "group": "Request Body",
-            "type": "String",
-            "optional": false,
-            "field": "categoria",
-            "description": "<p>Vegano, Ovolactovegetariano ou Lactovegetariano</p>"
-          },
-          {
-            "group": "Request Body",
-            "type": "String",
-            "optional": false,
-            "field": "tipoNegocio",
-            "description": "<p>Restaurante, Bar-Lanchonete ou Pizzaria</p>"
-          },
-          {
-            "group": "Request Body",
-            "type": "String",
-            "optional": false,
-            "field": "email",
-            "description": "<p>Email do estabelecimento</p>"
-          },
-          {
-            "group": "Request Body",
-            "type": "String",
-            "optional": false,
-            "field": "endereco",
-            "description": "<p>Endereço do estabelecimento</p>"
-          },
-          {
-            "group": "Request Body",
-            "type": "Number",
-            "optional": false,
-            "field": "numero",
-            "description": "<p>Número do estabelecimento</p>"
-          },
-          {
-            "group": "Request Body",
-            "type": "String",
-            "optional": false,
-            "field": "cidade",
-            "description": "<p>Cidade</p>"
-          },
-          {
-            "group": "Request Body",
-            "type": "String",
-            "optional": false,
-            "field": "uf",
-            "description": "<p>UF</p>"
-          },
-          {
-            "group": "Request Body",
-            "type": "String",
-            "optional": false,
-            "field": "cep",
-            "description": "<p>CEP do estabelecimento</p>"
-          },
-          {
-            "group": "Request Body",
-            "type": "String",
-            "optional": false,
-            "field": "diaSemana",
-            "description": "<p>Dias de atendimento do estabelecimento</p>"
-          },
-          {
-            "group": "Request Body",
-            "type": "String",
-            "optional": false,
-            "field": "horario",
-            "description": "<p>Horario de atendimento do estabelecimento</p>"
+            "field": "Retorna",
+            "description": "<p>estabelecimentos cadastrados</p>"
           }
         ]
-      }
-    },
-    "success": {
+      },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " HTTP/1.1 201 Created\n{\n    status: true,\n    mensagem: \"Estabelecimento cadastrado com sucesso!\"\n}",
+          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Teste\",\n\"cnpj\": 123456,\n\"categoria\": \"Teste\",\n\"tipoNegocio\": \"Teste\",\n\"email\": \"Teste\",\n\"endereco\": \"Teste\",\n\"numero\": \"Teste\",\n\"cidade\": \"Teste\",\n\"uf\": \"Teste\",\n\"cep\": 0800,\n\"diaSemana\": \"Teste\",\n\"horario\": \"Teste\"\n}]",
           "type": "json"
         }
       ]
@@ -298,14 +170,14 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "src/routes/estabelecimentosRoutes.js",
-    "groupTitle": "PostEstabelecimentos"
+    "groupTitle": "Estabelecimentos"
   },
   {
     "type": "put",
     "url": "/estabelecimentos/:cnpj",
-    "title": "",
-    "name": "Atualiza__o_de_dados_do_Estabelecimento",
-    "group": "PutEstabelecimentos",
+    "title": "Atualizacao de estabelecimento",
+    "name": "PutEstabelecimento",
+    "group": "Estabelecimentos",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -446,6 +318,134 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "src/routes/estabelecimentosRoutes.js",
-    "groupTitle": "PutEstabelecimentos"
+    "groupTitle": "Estabelecimentos"
+  },
+  {
+    "type": "post",
+    "url": "/estabelecimentos",
+    "title": "Criação de estabelecimento",
+    "name": "PutEstabelecimentos",
+    "group": "Estabelecimentos",
+    "parameter": {
+      "fields": {
+        "Request Body": [
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
+            "field": "nomeEstabelecimento",
+            "description": "<p>Nome do estabelecimento</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "Number",
+            "optional": false,
+            "field": "cnpj",
+            "description": "<p>Cnpj</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
+            "field": "categoria",
+            "description": "<p>Vegano, Ovolactovegetariano ou Lactovegetariano</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
+            "field": "tipoNegocio",
+            "description": "<p>Restaurante, Bar-Lanchonete ou Pizzaria</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email do estabelecimento</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
+            "field": "endereco",
+            "description": "<p>Endereço do estabelecimento</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "Number",
+            "optional": false,
+            "field": "numero",
+            "description": "<p>Número do estabelecimento</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
+            "field": "cidade",
+            "description": "<p>Cidade</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
+            "field": "uf",
+            "description": "<p>UF</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
+            "field": "cep",
+            "description": "<p>CEP do estabelecimento</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
+            "field": "diaSemana",
+            "description": "<p>Dias de atendimento do estabelecimento</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
+            "field": "horario",
+            "description": "<p>Horario de atendimento do estabelecimento</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 201 Created\n{\n    status: true,\n    mensagem: \"Estabelecimento cadastrado com sucesso!\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "500": [
+          {
+            "group": "500",
+            "optional": false,
+            "field": "serverError",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n  \"error\": \"Internal Server Error\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/estabelecimentosRoutes.js",
+    "groupTitle": "Estabelecimentos"
   }
 ] });
