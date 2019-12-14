@@ -14,7 +14,7 @@ exports.post = (req, res) => {
     })
 }
 
-exports.get = (req, res) => {
+exports.getAll = (req, res) => {
     Estabelecimentos.find(function(err, estabelecimentos){
         if (err) res.status(500).send(err);
         res.status(200).send(estabelecimentos)

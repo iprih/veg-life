@@ -36,7 +36,7 @@ const controller = require("../controller/estabelecimentosController")
  *     }
  * 
  */
- router.get("/", controller.get)
+ router.get("/", controller.getAll)
 
 
 /**
