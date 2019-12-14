@@ -47,7 +47,7 @@ exports.updateEstabelecimento = (req, res) => {
         (err, estabelecimento) => {
             if (err) return res.status(500).send(err);
 
-            if (!estabelecimento) return res.status(401).send({ mensagem: "Não localizamos o Estabelecimento para atualizar" });
+            if (!estabelecimento) return res.status(404).send({ mensagem: "Não localizamos o Estabelecimento para atualizar" });
             
             return res.status(200).send({ mensagem: "Estabelecimento atualizado com sucesso!" });
         });    
@@ -58,11 +58,11 @@ exports.deleteEstabelecimento = (req, res, next) => {
     Estabelecimentos.findOne({ "cnpj": req.params.cnpj }, function (err, estabelecimento) {
         if (err) res.status(500).send(err);
 
-        if (!estabelecimento) return res.status(200).send({ mensagem: "Não localizamos o Estabelecimento para remover" });
+        if (!estabelecimento) return res.status(404).send({ mensagem: "Não localizamos o Estabelecimento para exclusão!" });
 
         estabelecimento.remove(function (err) {
             if (!err) {
-                res.status(200).send({ message: 'Estabelecimento removido com sucesso.' });
+                res.status(200).send({ message: 'Estabelecimento removido com sucesso!' });
             }
         })
     })
