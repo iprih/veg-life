@@ -2,23 +2,21 @@ const mongoose = require('mongoose');//estabelece a conexão
 
 const EstabelecimentosSchema = new mongoose.Schema({
 
-    nomeEstabelecimento: { type: String },
-    cnpj: { type: Number },
-    categoria: { type: String },
-    tipoNegocio: { type: String},
-    email: { type: String },
+    nomeEstabelecimento: { type: String, required: true },
+    cnpj: { type: Number, required: true },
+    categoria: { type: String, required: true },
+    tipoNegocio: { type: String, required: true},
+    email: { type: String, required: true },
     endereco: { type: String },
     numero: { type: Number },
+    bairro: { type: String },
     cidade: { type: String },
     uf: { type: String },
-    cep: { type: Number },
-    diaSemana: { type: String },
-    horario: { type: String },
-    
+    cep: { type: Number, required: true },
+    diasAtendimento: { type: String, required: true },
+    horariosAtendimento: { type: String, required: true },
+    telefone: {type: Number, required: true},
     delivery: { type: Boolean }},
-//     contato: [{ddd: { type: Number},
-//          telefone: { type: Number }}]
-// },
     { versionKey: false })
 
 const Estabelecimentos = mongoose.model('Estabelecimentos', EstabelecimentosSchema)

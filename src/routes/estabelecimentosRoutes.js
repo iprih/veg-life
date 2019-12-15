@@ -88,12 +88,11 @@ router.post("/", controller.post)
  *     HTTP/1.1 200 OK
  *   [{    
  *   "nomeEstabelecimento": "Teste",
- *   "categoria": "Teste",
  *   "tipoNegocio": "Teste",
- *   "email": "Teste",
  *   "bairro": "Teste",
- *   "diaSemana": "Teste",
- *   "horario": "Teste"
+ *   "telefone": "1234"
+ *   "diasAtendimento": "Teste",
+ *   "horariosAtendimento": "Teste"
  *   }]
  *
  * @apiError (404) NotFound
@@ -107,6 +106,39 @@ router.post("/", controller.post)
  */
 
 router.get("/:categoria", controller.getByCategoria)
+
+/**
+ * @api {get} /estabelecimentos/:tipoNegocio/negocio Retorno de estabelecimentos por negocio
+ * @apiName GetByTipoNegocio
+ * @apiGroup Estabelecimentos
+ * 
+ * @apiParam {String} Restaurante, Pizzaria, Bares-Lanchonetes, Mercado, Loja
+ *
+ * @apiSuccess {Object[]} Retorna Informacoes dos Estabelecimentos
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *   [{    
+ *   "nomeEstabelecimento": "Teste",
+ *   "categoria": "Teste",
+ *   "bairro": "Teste",
+ *   "telefone": "1234"
+ *   "diasAtendimento": "Teste",
+ *   "horariosAtendimento": "Teste"
+ *   }]
+ *
+ * @apiError (404) NotFound
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 404 Not Found
+ *     {
+ *       "error": "Não localizamos o tipo de negocio solicitado!"
+ *     }
+ * 
+ */
+
+router.get("/:tipoNegocio/negocio", controller.getByTipoNegocio)
+
 
 
 /**

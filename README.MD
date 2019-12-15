@@ -16,6 +16,8 @@ O objetivo da aplicação é reunir estabelecimentos que ajudem na localização
  - Put - Atualização de estabelecimento | HTTP 200 OK
  - Delete - Exclusão de estabelecimento | HTTP 200 OK
 
+Como melhoria da aplicação, iremos consumir api do google e disponibilizar ao cliente a localização dos estabelecimentos mais próximos por CEP.
+
 ### Tecnologias Utilizadas / Apoio
 
  - API REST
@@ -24,5 +26,7 @@ O objetivo da aplicação é reunir estabelecimentos que ajudem na localização
  - Postman
  - Heroku
  - ApiDoc
+
+ #### apidoc disponivel também: https://veg-life.herokuapp.com/
 
  #### fonte pesquisa: https://www.svb.org.br/2469-pesquisa-do-ibope-aponta-crescimento-historico-no-numero-de-vegetarianos-no-brasil

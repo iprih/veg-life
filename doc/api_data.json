@@ -95,7 +95,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Teste\",\n\"categoria\": \"Teste\",\n\"tipoNegocio\": \"Teste\",\n\"email\": \"Teste\",\n\"bairro\": \"Teste\",\n\"diaSemana\": \"Teste\",\n\"horario\": \"Teste\"\n}]",
+          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Teste\",\n\"tipoNegocio\": \"Teste\",\n\"bairro\": \"Teste\",\n\"telefone\": \"1234\"\n\"diasAtendimento\": \"Teste\",\n\"horariosAtendimento\": \"Teste\"\n}]",
           "type": "json"
         }
       ]
@@ -115,6 +115,68 @@
         {
           "title": "Error-Response:",
           "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"Não localizamos a categoria solicitada!\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/estabelecimentosRoutes.js",
+    "groupTitle": "Estabelecimentos"
+  },
+  {
+    "type": "get",
+    "url": "/estabelecimentos/:tipoNegocio/negocio",
+    "title": "Retorno de estabelecimentos por negocio",
+    "name": "GetByTipoNegocio",
+    "group": "Estabelecimentos",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Restaurante",
+            "description": "<p>, Pizzaria, Bares-Lanchonetes, Mercado, Loja</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "Retorna",
+            "description": "<p>Informacoes dos Estabelecimentos</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Teste\",\n\"categoria\": \"Teste\",\n\"bairro\": \"Teste\",\n\"telefone\": \"1234\"\n\"diasAtendimento\": \"Teste\",\n\"horariosAtendimento\": \"Teste\"\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "404": [
+          {
+            "group": "404",
+            "optional": false,
+            "field": "NotFound",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"Não localizamos o tipo de negocio solicitado!\"\n}",
           "type": "json"
         }
       ]

@@ -21,29 +21,49 @@ exports.getAll = (req, res) => {
     })
 }
 
-exports.getByCategoria = (req, res) => {
+exports.getByCategoria = (req, res, next) => {
     const categoria = req.params.categoria
     Estabelecimentos.find({categoria}, function(err, estabelecimentos){
         if (err) res.status(500).send(err);
-        const nomes = estabelecimentos.map(estabelecimento => {
+        const infos = estabelecimentos.map(estabelecimento => {
             return{
                 nome: estabelecimento.nomeEstabelecimento,
-                telefone: estabelecimento.telefone
+                tipoNegocio: estabelecimento.tipoNegocio,
+                bairro: estabelecimento.bairro,
+                telefone: estabelecimento.telefone,
+                diasAtendimento: estabelecimento.diasAtendimento,
+                horariosAtendimento: estabelecimento.horariosAtendimento
             }
         })
-        res.status(200).send(nomes)
+        res.status(200).send(infos)
     })
 }
 
-//buscar por tipo de negocio, trazer nome, telefone e cardapoio
-//buscar por cep
-//na busca por categoria, trazer o cardapio
+exports.getByTipoNegocio = (req, res, next) => {
+    const tipoNegocio = req.params.tipoNegocio
+    Estabelecimentos.find({tipoNegocio}, function(err, estabelecimentos){
+        if (err) res.status(500).send(err);
+        const infosnegocio = estabelecimentos.map(estabelecimento => {
+            return{
+                nome: estabelecimento.nomeEstabelecimento,
+                categoria: estabelecimento.categoria,
+                bairro: estabelecimento.bairro,
+                telefone: estabelecimento.telefone,
+                diasAtendimento: estabelecimento.diasAtendimento,
+                horariosAtendimento: estabelecimento.horariosAtendimento
+                
+              }       
+        })
+        res.status(200).send(infosnegocio)
+
+    })
+}
 
 exports.updateEstabelecimento = (req, res) => {
     Estabelecimentos.findOneAndUpdate( 
         { cnpj: req.params.cnpj },
         { $set: req.body },
-        { upsert: false },
+        { upsert: true },
         (err, estabelecimento) => {
             if (err) return res.status(500).send(err);
 
