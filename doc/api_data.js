@@ -63,7 +63,50 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/estabelecimentos/:categoria",
+    "url": "/estabelecimentos/:cnpj",
+    "title": "Retorno de estabelecimentos por cnpj",
+    "name": "GetByCNPJ",
+    "group": "Estabelecimentos",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "CNPJ",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "Retorna",
+            "description": "<p>Informacoes dos Estabelecimentos</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Teste\",\n\"cnpj\": 123456,\n\"categoria\": \"Teste\",\n\"tipoNegocio\": \"Teste\",\n\"email\": \"Teste\",\n\"endereco\": \"Teste\",\n\"numero\": \"Teste\",\n\"bairro\": \"teste\",\n\"cidade\": \"Teste\",\n\"uf\": \"Teste\",\n\"cep\": 0800,\n\"diasAtendimento\": \"Teste\",\n\"horariosAtendimento\": \"Teste\"\n\"telefone\": \"teste\",\n\"delivery\": \"teste\"\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/estabelecimentosRoutes.js",
+    "groupTitle": "Estabelecimentos"
+  },
+  {
+    "type": "get",
+    "url": "/estabelecimentos/:categoria/categoria",
     "title": "Retorno de estabelecimentos por categoria",
     "name": "GetByCategoria",
     "group": "Estabelecimentos",
@@ -206,7 +249,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Teste\",\n\"cnpj\": 123456,\n\"categoria\": \"Teste\",\n\"tipoNegocio\": \"Teste\",\n\"email\": \"Teste\",\n\"endereco\": \"Teste\",\n\"numero\": \"Teste\",\n\"cidade\": \"Teste\",\n\"uf\": \"Teste\",\n\"cep\": 0800,\n\"diaSemana\": \"Teste\",\n\"horario\": \"Teste\"\n}]",
+          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Teste\",\n\"cnpj\": 123456,\n\"categoria\": \"Teste\",\n\"tipoNegocio\": \"Teste\",\n\"email\": \"Teste\",\n\"endereco\": \"Teste\",\n\"numero\": \"Teste\",\n\"bairro\": \"teste\",\n\"cidade\": \"Teste\",\n\"uf\": \"Teste\",\n\"cep\": 0800,\n\"diasAtendimento\": \"Teste\",\n\"horariosAtendimento\": \"Teste\"\n\"telefone\": \"teste\",\n\"delivery\": \"teste\"\n}]",
           "type": "json"
         }
       ]
@@ -305,6 +348,13 @@ define({ "api": [
             "group": "Request Body",
             "type": "String",
             "optional": false,
+            "field": "bairro",
+            "description": "<p>Bairro do estabelecimento</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
             "field": "cidade",
             "description": "<p>Cidade</p>"
           },
@@ -326,15 +376,29 @@ define({ "api": [
             "group": "Request Body",
             "type": "String",
             "optional": false,
-            "field": "diaSemana",
+            "field": "diasAtendimento",
             "description": "<p>Dias de atendimento do estabelecimento</p>"
           },
           {
             "group": "Request Body",
             "type": "String",
             "optional": false,
-            "field": "horario",
+            "field": "horariosAtendimento",
             "description": "<p>Horario de atendimento do estabelecimento</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
+            "field": "Telefone",
+            "description": "<p>Telefone de atendimento com ddd</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "Boolean",
+            "optional": false,
+            "field": "delivery",
+            "description": "<p>Delivery Sim ou Nao</p>"
           }
         ]
       }
@@ -444,6 +508,13 @@ define({ "api": [
             "group": "Request Body",
             "type": "String",
             "optional": false,
+            "field": "bairro",
+            "description": "<p>Bairro do estabelecimento</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
             "field": "cidade",
             "description": "<p>Cidade</p>"
           },
@@ -465,15 +536,29 @@ define({ "api": [
             "group": "Request Body",
             "type": "String",
             "optional": false,
-            "field": "diaSemana",
+            "field": "diasAtendimento",
             "description": "<p>Dias de atendimento do estabelecimento</p>"
           },
           {
             "group": "Request Body",
             "type": "String",
             "optional": false,
-            "field": "horario",
+            "field": "horariosAtendimento",
             "description": "<p>Horario de atendimento do estabelecimento</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "String",
+            "optional": false,
+            "field": "Telefone",
+            "description": "<p>Telefone de atendimento com ddd</p>"
+          },
+          {
+            "group": "Request Body",
+            "type": "Boolean",
+            "optional": false,
+            "field": "delivery",
+            "description": "<p>Delivery Sim ou Nao</p>"
           }
         ]
       }
