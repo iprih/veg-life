@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "a21d710a-808f-47d4-bf6f-88acb6de4477",
+		"name": "Projeto Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"item": [
+				{
+					"name": "Todos os Estabelecimentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/estabelecimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estabelecimentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca estabelecimento por categoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/estabelecimentos/Vegano/categoria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estabelecimentos",
+								"Vegano",
+								"categoria"
+							]
+						},
+						"description": "Vegano, Ovolactovegetariano ou Lactovegetariano"
+					},
+					"response": []
+				},
+				{
+					"name": "Busca estabelecimento por negocio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/estabelecimentos/Bares-Lanchonetes/negocio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estabelecimentos",
+								"Bares-Lanchonetes",
+								"negocio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca estabelecimento por CNPJ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/estabelecimentos/123456",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estabelecimentos",
+								"123456"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Cadastro de cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"nomeEstabelecimento\": \"TESTE Novo Jsonnnnn\",\r\n   \"cnpj\":\"123456\",\r\n   \"categoria\": \"Vegano\",\r\n    \"tipoNegocio\": \"Pizzaria\",\r\n    \"email\": \"veganepizzaria@atendimento.com.br\",\r\n    \"endereco\": \"Rua Augusta\",\r\n    \"numero\":\"20\",\r\n    \"bairro\": \"Augusta\",\r\n    \"cidade\": \"São Paulo\",\r\n    \"uf\": \"SP\",\r\n    \"cep\": \"01305100\",\r\n    \"diasAtendimento\": \"Segunda a Sabado\",\r\n    \"horariosAtendimento\": \"11 as 20\",\r\n    \"telefone\": \"123456789\",\r\n    \"delivery\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/estabelecimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estabelecimentos"
+							]
+						},
+						"description": "Criando novo Estabelecimento"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Put",
+			"item": [
+				{
+					"name": "Atualizando nome do Estabelecimento",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nomeEstabelecimento\": \"Mudando o Nome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/estabelecimentos/123456",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estabelecimentos",
+								"123456"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Delete",
+			"item": [
+				{
+					"name": "Deleta estabelecimento por CNPJ",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/estabelecimentos/123456",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estabelecimentos",
+								"123456"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
