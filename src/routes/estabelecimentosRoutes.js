@@ -20,11 +20,14 @@ const controller = require("../controller/estabelecimentosController")
  *   "email": "Teste",
  *   "endereco": "Teste",
  *   "numero": "Teste",
+ *   "bairro": "teste",
  *   "cidade": "Teste",
  *   "uf": "Teste",
  *   "cep": 0800,
- *   "diaSemana": "Teste",
- *   "horario": "Teste"
+ *   "diasAtendimento": "Teste",
+ *   "horariosAtendimento": "Teste"
+ *   "telefone": "teste",
+ *   "delivery": "teste"
  *   }]
  *
  * @apiError (500) serverError
@@ -51,11 +54,14 @@ const controller = require("../controller/estabelecimentosController")
  * @apiParam (Request Body) {String} email                       Email do estabelecimento
  * @apiParam (Request Body) {String} endereco                    Endereço do estabelecimento
  * @apiParam (Request Body) {Number} numero                      Número do estabelecimento
+ * @apiParam (Request Body) {String} bairro                      Bairro do estabelecimento
  * @apiParam (Request Body) {String} cidade                      Cidade
  * @apiParam (Request Body) {String} uf                          UF
  * @apiParam (Request Body) {String} cep                         CEP do estabelecimento  
- * @apiParam (Request Body) {String} diaSemana                   Dias de atendimento do estabelecimento
- * @apiParam (Request Body) {String} horario                     Horario de atendimento do estabelecimento
+ * @apiParam (Request Body) {String} diasAtendimento             Dias de atendimento do estabelecimento
+ * @apiParam (Request Body) {String} horariosAtendimento         Horario de atendimento do estabelecimento
+ * @apiParam (Request Body) {String} Telefone                    Telefone de atendimento com ddd
+ * @apiParam (Request Body) {Boolean} delivery                   Delivery Sim ou Nao
  * 
  * @apiSuccessExample {json} Success-Response:
  *    HTTP/1.1 201 Created
@@ -76,7 +82,40 @@ const controller = require("../controller/estabelecimentosController")
 router.post("/", controller.post)
 
 /**
- * @api {get} /estabelecimentos/:categoria Retorno de estabelecimentos por categoria
+ * @api {get} /estabelecimentos/:cnpj Retorno de estabelecimentos por cnpj
+ * @apiName GetByCNPJ
+ * @apiGroup Estabelecimentos
+ * 
+ * @apiParam {Number} CNPJ
+ *
+ * @apiSuccess {Object[]} Retorna Informacoes dos Estabelecimentos
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *   [{    
+ *   "nomeEstabelecimento": "Teste",
+ *   "cnpj": 123456,
+ *   "categoria": "Teste",
+ *   "tipoNegocio": "Teste",
+ *   "email": "Teste",
+ *   "endereco": "Teste",
+ *   "numero": "Teste",
+ *   "bairro": "teste",
+ *   "cidade": "Teste",
+ *   "uf": "Teste",
+ *   "cep": 0800,
+ *   "diasAtendimento": "Teste",
+ *   "horariosAtendimento": "Teste"
+ *   "telefone": "teste",
+ *   "delivery": "teste"
+ *   }]
+ * 
+ */
+
+router.get("/:cnpj", controller.getByCnpj)
+
+/**
+ * @api {get} /estabelecimentos/:categoria/categoria Retorno de estabelecimentos por categoria
  * @apiName GetByCategoria
  * @apiGroup Estabelecimentos
  * 
@@ -105,7 +144,7 @@ router.post("/", controller.post)
  * 
  */
 
-router.get("/:categoria", controller.getByCategoria)
+router.get("/:categoria/categoria", controller.getByCategoria)
 
 /**
  * @api {get} /estabelecimentos/:tipoNegocio/negocio Retorno de estabelecimentos por negocio
@@ -155,11 +194,14 @@ router.get("/:tipoNegocio/negocio", controller.getByTipoNegocio)
  * @apiParam (Request Body) {String} email                       Email do estabelecimento
  * @apiParam (Request Body) {String} endereco                    Endereço do estabelecimento
  * @apiParam (Request Body) {Number} numero                      Número do estabelecimento
+ * @apiParam (Request Body) {String} bairro                      Bairro do estabelecimento
  * @apiParam (Request Body) {String} cidade                      Cidade
  * @apiParam (Request Body) {String} uf                          UF
  * @apiParam (Request Body) {String} cep                         CEP do estabelecimento  
- * @apiParam (Request Body) {String} diaSemana                   Dias de atendimento do estabelecimento
- * @apiParam (Request Body) {String} horario                     Horario de atendimento do estabelecimento
+ * @apiParam (Request Body) {String} diasAtendimento             Dias de atendimento do estabelecimento
+ * @apiParam (Request Body) {String} horariosAtendimento         Horario de atendimento do estabelecimento
+ * @apiParam (Request Body) {String} Telefone                    Telefone de atendimento com ddd
+ * @apiParam (Request Body) {Boolean} delivery                   Delivery Sim ou Nao
  *
  * 
  * @apiSuccess {Object[]} Mensagem de sucesso ao alterar dados.
