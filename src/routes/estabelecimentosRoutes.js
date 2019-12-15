@@ -13,21 +13,21 @@ const controller = require("../controller/estabelecimentosController")
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *   [{    
- *   "nomeEstabelecimento": "Teste",
- *   "cnpj": 123456,
- *   "categoria": "Teste",
- *   "tipoNegocio": "Teste",
- *   "email": "Teste",
- *   "endereco": "Teste",
- *   "numero": "Teste",
- *   "bairro": "teste",
- *   "cidade": "Teste",
- *   "uf": "Teste",
- *   "cep": 0800,
- *   "diasAtendimento": "Teste",
- *   "horariosAtendimento": "Teste"
- *   "telefone": "teste",
- *   "delivery": "teste"
+ *   "nomeEstabelecimento": "Astronauta Café",
+ *   "cnpj": 65897412358547,
+ *   "categoria": "Vegano",
+ *   "tipoNegocio": "Bares-Lanchonetes",
+ *   "email": "astronautacafe@atendimento.com.br",
+ *   "endereco": "Rua Rio Grande",
+ *   "numero": 139,
+ *   "bairro": "Vila Mariana",
+ *   "cidade": "São Paulo",
+ *   "uf": "SP",
+ *   "cep": 4015050,
+ *   "diasAtendimento": "Segunda a Sabado",
+ *   "horariosAtendimento": "08:30 as 19:00",
+ *   "telefone": 11548126440,
+ *   "delivery": true
  *   }]
  *
  * @apiError (500) serverError
@@ -93,21 +93,21 @@ router.post("/", controller.post)
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *   [{    
- *   "nomeEstabelecimento": "Teste",
- *   "cnpj": 123456,
- *   "categoria": "Teste",
- *   "tipoNegocio": "Teste",
- *   "email": "Teste",
- *   "endereco": "Teste",
- *   "numero": "Teste",
- *   "bairro": "teste",
- *   "cidade": "Teste",
- *   "uf": "Teste",
- *   "cep": 0800,
- *   "diasAtendimento": "Teste",
- *   "horariosAtendimento": "Teste"
- *   "telefone": "teste",
- *   "delivery": "teste"
+ *   "nomeEstabelecimento": "Astronauta Café",
+ *   "cnpj": 65897412358547,
+ *   "categoria": "Vegano",
+ *   "tipoNegocio": "Bares-Lanchonetes",
+ *   "email": "astronautacafe@atendimento.com.br",
+ *   "endereco": "Rua Rio Grande",
+ *   "numero": 139,
+ *   "bairro": "Vila Mariana",
+ *   "cidade": "São Paulo",
+ *   "uf": "SP",
+ *   "cep": 4015050,
+ *   "diasAtendimento": "Segunda a Sabado",
+ *   "horariosAtendimento": "08:30 as 19:00",
+ *   "telefone": 11548126440,
+ *   "delivery": true
  *   }]
  * 
  */
@@ -126,12 +126,12 @@ router.get("/:cnpj", controller.getByCnpj)
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *   [{    
- *   "nomeEstabelecimento": "Teste",
- *   "tipoNegocio": "Teste",
- *   "bairro": "Teste",
- *   "telefone": "1234"
- *   "diasAtendimento": "Teste",
- *   "horariosAtendimento": "Teste"
+ *   "nome": "Astronauta Café",
+ *   "tipoNegocio": "Pizzaria",
+ *   "bairro": "Vila Mariana",
+ *   "telefone": 11548126440,
+ *   "diasAtendimento": "Segunda a Sabado",
+ *   "horariosAtendimento": "08:30 as 19:00"
  *   }]
  *
  * @apiError (404) NotFound
@@ -158,12 +158,12 @@ router.get("/:categoria/categoria", controller.getByCategoria)
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *   [{    
- *   "nomeEstabelecimento": "Teste",
- *   "categoria": "Teste",
- *   "bairro": "Teste",
- *   "telefone": "1234"
- *   "diasAtendimento": "Teste",
- *   "horariosAtendimento": "Teste"
+ *   "nome": "Astronauta Café",
+ *   "categoria": "Vegano",
+ *   "bairro": "Vila Mariana",
+ *   "telefone": 11548126440,
+ *   "diasAtendimento": "Segunda a Sabado",
+ *   "horariosAtendimento": "08:30 as 19:00"
  *   }]
  *
  * @apiError (404) NotFound

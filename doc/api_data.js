@@ -95,7 +95,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Teste\",\n\"cnpj\": 123456,\n\"categoria\": \"Teste\",\n\"tipoNegocio\": \"Teste\",\n\"email\": \"Teste\",\n\"endereco\": \"Teste\",\n\"numero\": \"Teste\",\n\"bairro\": \"teste\",\n\"cidade\": \"Teste\",\n\"uf\": \"Teste\",\n\"cep\": 0800,\n\"diasAtendimento\": \"Teste\",\n\"horariosAtendimento\": \"Teste\"\n\"telefone\": \"teste\",\n\"delivery\": \"teste\"\n}]",
+          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Astronauta Café\",\n\"cnpj\": 65897412358547,\n\"categoria\": \"Vegano\",\n\"tipoNegocio\": \"Bares-Lanchonetes\",\n\"email\": \"astronautacafe@atendimento.com.br\",\n\"endereco\": \"Rua Rio Grande\",\n\"numero\": 139,\n\"bairro\": \"Vila Mariana\",\n\"cidade\": \"São Paulo\",\n\"uf\": \"SP\",\n\"cep\": 4015050,\n\"diasAtendimento\": \"Segunda a Sabado\",\n\"horariosAtendimento\": \"08:30 as 19:00\",\n\"telefone\": 11548126440,\n\"delivery\": true\n}]",
           "type": "json"
         }
       ]
@@ -138,7 +138,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Teste\",\n\"tipoNegocio\": \"Teste\",\n\"bairro\": \"Teste\",\n\"telefone\": \"1234\"\n\"diasAtendimento\": \"Teste\",\n\"horariosAtendimento\": \"Teste\"\n}]",
+          "content": "  HTTP/1.1 200 OK\n[{    \n\"nome\": \"Astronauta Café\",\n\"tipoNegocio\": \"Pizzaria\",\n\"bairro\": \"Vila Mariana\",\n\"telefone\": 11548126440,\n\"diasAtendimento\": \"Segunda a Sabado\",\n\"horariosAtendimento\": \"08:30 as 19:00\"\n}]",
           "type": "json"
         }
       ]
@@ -200,7 +200,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Teste\",\n\"categoria\": \"Teste\",\n\"bairro\": \"Teste\",\n\"telefone\": \"1234\"\n\"diasAtendimento\": \"Teste\",\n\"horariosAtendimento\": \"Teste\"\n}]",
+          "content": "  HTTP/1.1 200 OK\n[{    \n\"nome\": \"Astronauta Café\",\n\"categoria\": \"Vegano\",\n\"bairro\": \"Vila Mariana\",\n\"telefone\": 11548126440,\n\"diasAtendimento\": \"Segunda a Sabado\",\n\"horariosAtendimento\": \"08:30 as 19:00\"\n}]",
           "type": "json"
         }
       ]
@@ -249,7 +249,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Teste\",\n\"cnpj\": 123456,\n\"categoria\": \"Teste\",\n\"tipoNegocio\": \"Teste\",\n\"email\": \"Teste\",\n\"endereco\": \"Teste\",\n\"numero\": \"Teste\",\n\"bairro\": \"teste\",\n\"cidade\": \"Teste\",\n\"uf\": \"Teste\",\n\"cep\": 0800,\n\"diasAtendimento\": \"Teste\",\n\"horariosAtendimento\": \"Teste\"\n\"telefone\": \"teste\",\n\"delivery\": \"teste\"\n}]",
+          "content": "  HTTP/1.1 200 OK\n[{    \n\"nomeEstabelecimento\": \"Astronauta Café\",\n\"cnpj\": 65897412358547,\n\"categoria\": \"Vegano\",\n\"tipoNegocio\": \"Bares-Lanchonetes\",\n\"email\": \"astronautacafe@atendimento.com.br\",\n\"endereco\": \"Rua Rio Grande\",\n\"numero\": 139,\n\"bairro\": \"Vila Mariana\",\n\"cidade\": \"São Paulo\",\n\"uf\": \"SP\",\n\"cep\": 4015050,\n\"diasAtendimento\": \"Segunda a Sabado\",\n\"horariosAtendimento\": \"08:30 as 19:00\",\n\"telefone\": 11548126440,\n\"delivery\": true\n}]",
           "type": "json"
         }
       ]
